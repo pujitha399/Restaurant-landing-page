@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Restaurant App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #fefefe;
+    }
+    header {
+      background-color: #d62828;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      background-color: #f77f00;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 0.5rem 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 2rem;
+    }
+    #home { background-color: #fefae0; }
+    #menu { background-color: #faedcd; }
+    #about { background-color: #d4a373; color: white; }
+    #reserve { background-color: #e9edc9; }
+    #gallery { background-color: #f5f5f5; }
+    .menu-item {
+      margin: 1rem 0;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .menu-item img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+    .menu-item img:hover {
+      transform: scale(1.1);
+    }
+    /* Gallery Modern Card Style */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .gallery-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .gallery-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+    .gallery-card:hover img {
+      transform: scale(1.1);
+    }
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.6);
+      color: white;
+      padding: 0.5rem;
+      text-align: center;
+      font-size: 1rem;
+    }
+    form input, form textarea {
+      display: block;
+      margin: 0.5rem 0;
+      width: 100%;
+      padding: 0.5rem;
+    }
+    form button {
+      background-color: #d62828;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      cursor: pointer;
+    }
+    form button:hover {
+      background-color: #a61d1d;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #6a994e;
+      color: white;
+    }
+    .social-icons a {
+      color: white;
+      margin: 0 10px;
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+    .social-icons a:hover {
+      color: #f77f00;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🍽 Welcome to Foodie's Delight</h1>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#menu">Menu</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#about">About Us</a>
+    <a href="#reserve">Reserve a Table</a>
+  </nav>
+
+  <section id="home">
+    <h2>Home</h2>
+    <p>Welcome to Foodie's Delight — where flavor meets passion. We serve delicious meals crafted with love and fresh ingredients.</p>
+  </section>
+
+  <section id="menu">
+    <h2>Our Menu</h2>
+    <div class="menu-item">
+      <img src="https://cdn.loveandlemons.com/wp-content/uploads/opengraph/2023/07/margherita-pizza-recipe.jpg" alt="Pizza">
+      <div>
+        <h4>🍕 Margherita Pizza - ₹299</h4>
+        <p>Classic delight with fresh mozzarella and basil.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80" alt="Burger">
+      <div>
+        <h4>🍔 Cheeseburger - ₹249</h4>
+        <p>Juicy beef patty with cheddar and veggies.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTL1R8p3R9He4pjuRnYbnWhjwKj8aK1hIIi3g&s" alt="Salad">
+      <div>
+        <h4>🥗 Caesar Salad - ₹199</h4>
+        <p>Crisp romaine lettuce with creamy Caesar dressing.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjYKmgVvVfvA9SPhBgcL3VcuKMPSIjwaYg_A&s" alt="Pasta">
+      <div>
+        <h4>🍝 Pasta Alfredo - ₹349</h4>
+        <p>Creamy Alfredo sauce with fettuccine pasta.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQY0dtuGiPhd3bowXxrbe9OyigH-M76VDV0nA&s" alt="Chicken">
+      <div>
+        <h4>🍗 Tandoori Chicken - ₹399</h4>
+        <p>Spicy grilled chicken with Indian spices.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80" alt="Cake">
+      <div>
+        <h4>🍰 Chocolate Cake - ₹179</h4>
+        <p>Rich and moist chocolate layered cake.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery-grid">
+      <div class="gallery-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiCuem-at-uRZQ5ft4t24y4-Y7WYTnRHdVjA&s" alt="Interior">
+        <div class="gallery-caption">Elegant Interior</div>
+      </div>
+      <div class="gallery-card">
+        <img src="https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=800&q=80" alt="Dish">
+        <div class="gallery-caption">Signature Dish</div>
+      </div>
+      <div class="gallery-card">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80" alt="Ambiance">
+        <div class="gallery-caption">Romantic Ambiance</div>
+      </div>
+      <div class="gallery-card">
+        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80" alt="Dining Table">
+        <div class="gallery-caption">Cozy Dining</div>
+      </div>
+      <div class="gallery-card">
+        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80" alt="Chef">
+        <div class="gallery-caption">Our Chef at Work</div>
+      </div>
+      <div class="gallery-card">
+        <img src="https://assets.cntraveller.in/photos/66fa6349966ba1097969a59b/master/w_1600%2Cc_limit/Il%2520Giardino%2520di%2520Sassi.jpg" alt="Exterior">
+        <div class="gallery-caption">Restaurant Exterior</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Established in 2020, Foodie's Delight has been a go-to place for food lovers across the city. With a cozy ambience, top-notch chefs, and a menu that blends tradition with innovation, we strive to create an unforgettable dining experience. Our ingredients are locally sourced and freshly prepared every day to ensure the best flavors on your plate.</p>
+  </section>
+
+  <section id="reserve">
+    <h2>Reserve a Table</h2>
+    <form>
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" placeholder="Your name" required />
+      <label for="date">Date:</label>
+      <input type="date" id="date" required />
+      <label for="time">Time:</label>
+      <input type="time" id="time" required />
+      <label for="guests">Number of Guests:</label>
+      <input type="number" id="guests" placeholder="Number of guests" min="1" required />
+      <label for="message">Special Requests:</label>
+      <textarea id="message" rows="4" placeholder="Any special requests?"></textarea>
+      <button type="submit">Book Now</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Foodie's Delight. All Rights Reserved.</p>
+    <div class="social-icons">
+      <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+    </div>
+  </footer>
+
+</body>
+</html>
